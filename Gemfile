@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',      '6.0.3.4'
@@ -27,10 +28,6 @@ group :test do
   gem 'webdrivers',         '4.3.0'
 end
 
-gem 'pg', :group => [:production]
-
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-# Uncomment the following line if you're running Rails
-# on a native Windows system:
-# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :production do 
+  gem 'pg', '1.1.4'
+end
